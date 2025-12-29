@@ -1511,7 +1511,7 @@ const WhippingScene: React.FC = () => {
         <EnvironmentDecorations />
         
         {/* 网格辅助线 */}
-        <gridHelper args={[10, 10, '#444444', '#222222']} />
+        {/* <gridHelper args={[10, 10, '#444444', '#222222']} /> */}
         
         {/* 相机控制 */}
         <OrbitControls 

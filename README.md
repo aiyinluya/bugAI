@@ -1,4 +1,4 @@
-![alt text](image.png)
+![alt text](show.png)
 
 # bugAI - 《鞭打AI》网站
 
