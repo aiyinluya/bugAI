@@ -1,3 +1,5 @@
+![alt text](image.png)
+
 # bugAI - 《鞭打AI》网站
 
 一个幽默、解压的互动平台，让用户以游戏化方式宣泄对AI的不满情绪，同时建立AI错误案例库和用户互助社区。
@@ -63,7 +65,7 @@
 
 1. **克隆仓库**
 ```bash
-git clone <repository-url>
+git clone https://github.com/aiyinluya/bugAI.git
 cd bugAI
 ```
 
@@ -188,9 +190,9 @@ bugAI/
 
 如果您有任何问题或建议，请通过以下方式联系我们：
 
-- 项目作者：[Your Name]
-- 邮箱：[your.email@example.com]
-- 项目地址：[GitHub Repository URL]
+- 项目作者：li zhuo
+- 邮箱：oioihoii@163.com
+- 项目地址：[GitHub Repository URL](https://github.com/aiyinluya/bugAI)
 
 ---
 
