@@ -1,0 +1,540 @@
+/* BugAI 应用样式 */
+
+/* 基础样式重置 */
+/* 全局样式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+/* 确保应用占满全屏 */
+#root {
+  width: 100%;
+  height: 100vh;
+}
+
+/* App 布局样式 */
+.app-layout {
+  min-height: 100vh;
+  background-color: #f0f2f5;
+}
+
+/* 侧边栏样式 */
+.app-sider {
+  background-color: #001529;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.app-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.app-menu {
+  border-right: 0;
+}
+
+/* 主布局样式 */
+.app-main-layout {
+  background-color: #fff;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.08);
+}
+
+/* 头部样式 */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background-color: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  height: 64px;
+  transition: all 0.3s ease;
+}
+
+.app-header-trigger {
+  font-size: 18px;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.app-header-trigger:hover {
+  color: #1890ff;
+  background-color: #f0f5ff;
+}
+
+.app-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* 内容区域样式 */
+.app-content {
+  margin: 16px;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  min-height: 280px;
+  transition: all 0.3s ease;
+}
+
+/* 全屏内容区域样式 */
+.app-content-fullscreen {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* 鞭打场景包装器样式 */
+.whipping-scene-wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 3D画布样式 */
+.whipping-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 响应式调整 */
+@media (max-width: 1200px) {
+  .whipping-canvas {
+    height: 100%;
+  }
+  
+  .whipping-scene-wrapper {
+    height: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .whipping-canvas {
+    height: 100%;
+  }
+  
+  .whipping-scene-wrapper {
+    height: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 3D场景调整 */
+  .whipping-canvas {
+    height: 100%;
+  }
+  
+  .whipping-scene-wrapper {
+    height: 100%;
+  }
+}
+
+/* 透明头部样式 */
+.app-header-transparent {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-bottom: 0;
+  box-shadow: none;
+  backdrop-filter: blur(10px);
+}
+
+.app-header-transparent .app-header-trigger {
+  color: #fff;
+}
+
+.app-header-transparent .app-header-trigger:hover {
+  color: #1890ff;
+  background-color: rgba(24, 144, 255, 0.2);
+}
+
+/* 全屏鞭打布局样式 */
+.fullscreen-whipping-layout {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* 鞭打场景顶部导航 */
+.whipping-top-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 100;
+}
+
+.whipping-logo {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.whipping-logo:hover {
+  color: #1890ff;
+  transform: scale(1.05);
+}
+
+.whipping-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 全屏3D场景容器 */
+.whipping-scene-container-fullscreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 3D画布样式 */
+.whipping-canvas {
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  display: block;
+}
+
+/* 鞭打场景包装器样式 */
+.whipping-scene-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 调整3D场景容器样式 */
+.whipping-scene-container {
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  background-color: #1a1a1a;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+/* 响应式调整 */
+@media (max-width: 1200px) {
+  .case-display-content {
+    max-width: 100%;
+  }
+  
+  .app-content {
+    margin: 12px;
+    padding: 20px;
+  }
+  
+  .whipping-canvas {
+    min-height: 500px;
+  }
+  
+  .whipping-scene-wrapper {
+    min-height: 500px;
+  }
+  
+  .whipping-scene-container {
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 992px) {
+  .case-detail-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  
+  .case-filter-selects {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .case-filter-selects select {
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+  
+  .whipping-canvas {
+    min-height: 450px;
+  }
+  
+  .whipping-scene-wrapper {
+    min-height: 450px;
+  }
+  
+  .whipping-scene-container {
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 基础样式调整 */
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .stat-value {
+    font-size: 20px;
+  }
+  
+  /* App布局调整 */
+  .app-header {
+    padding: 0 16px;
+  }
+  
+  .app-content {
+    margin: 8px;
+    padding: 16px;
+  }
+  
+  .app-header-actions {
+    gap: 8px;
+  }
+  
+  /* 案例详情调整 */
+  .case-detail-stats {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .case-detail-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .case-detail-date {
+    text-align: left;
+  }
+  
+  .case-detail-actions {
+    flex-direction: column;
+  }
+  
+  /* 对话记录调整 */
+  .case-detail-message-content {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .case-detail-message-text {
+    width: 100%;
+  }
+  
+  /* 筛选栏调整 */
+  .case-filter-content {
+    padding: 8px;
+  }
+  
+  .case-filter-content .ant-input-search {
+    width: 100% !important;
+    margin-bottom: 12px;
+  }
+  
+  /* 3D场景调整 */
+  .case-detail-whipping {
+    height: 300px;
+  }
+  
+  .whipping-canvas {
+    min-height: 350px;
+  }
+  
+  .whipping-scene-wrapper {
+    min-height: 350px;
+  }
+  
+  .whipping-scene-container {
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* 更小组件调整 */
+  .app-logo {
+    font-size: 16px;
+  }
+  
+  .case-card-title {
+    font-size: 14px;
+  }
+  
+  .case-card-desc {
+    font-size: 13px;
+  }
+  
+  .case-detail-title {
+    font-size: 18px;
+  }
+  
+  .case-detail-section-title {
+    font-size: 14px;
+  }
+  
+  /* 按钮大小调整 */
+  .app-header-actions .ant-btn {
+    font-size: 13px;
+    padding: 4px 12px;
+  }
+  
+  .case-detail-actions .ant-btn {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}
+
+/* 认证相关样式 */
+.auth-modal .ant-modal-content {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.auth-modal .ant-tabs {
+  background-color: transparent;
+}
+
+.auth-modal .ant-tabs-nav {
+  margin: 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.auth-modal .ant-tabs-tab {
+  padding: 16px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.login-form-card,
+.register-form-card {
+  border: none;
+  box-shadow: none;
+}
+
+.login-form-header,
+.register-form-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.login-form-header h2,
+.register-form-header h2 {
+  margin-bottom: 8px;
+  color: #1890ff;
+}
+
+.login-form-error,
+.register-form-error {
+  margin-bottom: 16px;
+  padding: 8px 12px;
+  background-color: #fff2f0;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.login-form-actions,
+.register-form-actions {
+  margin-top: 24px;
+}
+
+/* 用户头像和菜单样式 */
+.user-avatar-container {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-avatar-container:hover {
+  background-color: #f0f5ff;
+}
+
+.user-avatar {
+  margin-right: 8px;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .user-name {
+    display: none;
+  }
+  
+  .auth-modal {
+    width: 90% !important;
+    max-width: 400px;
+  }
+}
